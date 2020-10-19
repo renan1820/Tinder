@@ -19,6 +19,7 @@
 		8D10BD5A253CCBF4003B9F96 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD59253CCBF4003B9F96 /* UILabel.swift */; };
 		8D10BD5D253D3E57003B9F96 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD5C253D3E57003B9F96 /* Usuario.swift */; };
 		8D10BD60253D3F37003B9F96 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD5F253D3F37003B9F96 /* UsuarioService.swift */; };
+		8D10BD62253D56B3003B9F96 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD61253D56B3003B9F96 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8D10BD59253CCBF4003B9F96 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		8D10BD5C253D3E57003B9F96 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		8D10BD5F253D3F37003B9F96 /* UsuarioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioService.swift; sourceTree = "<group>"; };
+		8D10BD61253D56B3003B9F96 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				8D10BD57253CC8D8003B9F96 /* UIView.swift */,
 				8D10BD59253CCBF4003B9F96 /* UILabel.swift */,
+				8D10BD61253D56B3003B9F96 /* UIImageView.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				8D10BD41253BFDEA003B9F96 /* ViewController.swift in Sources */,
 				8D10BD5A253CCBF4003B9F96 /* UILabel.swift in Sources */,
 				8D10BD55253CC667003B9F96 /* CombineCardView.swift in Sources */,
+				8D10BD62253D56B3003B9F96 /* UIImageView.swift in Sources */,
 				8D10BD3D253BFDEA003B9F96 /* AppDelegate.swift in Sources */,
 				8D10BD58253CC8D8003B9F96 /* UIView.swift in Sources */,
 				8D10BD3F253BFDEA003B9F96 /* SceneDelegate.swift in Sources */,

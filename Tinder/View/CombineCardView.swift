@@ -21,17 +21,14 @@ class CombineCardView: UIView {
             }
         }
     }
-    let fotoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pessoa-1")
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        return imageView
-    }()
+    let fotoImageView: UIImageView = .fotoImageView()
     
     let nomeLabel: UILabel = .textBoldLabel(32, textColor: .white)
     let idadeLabel: UILabel = .textLabel(28, textColor: .white)
     let fraseLabel: UILabel = .textLabel(18, textColor: .white, numberLines: 2)
+    
+    let likeImageView: UIImageView = .iconCard(named: "card-like")
+    let deslikeImageView: UIImageView = .iconCard(named: "card-deslike")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,17 +38,30 @@ class CombineCardView: UIView {
         layer.cornerRadius = 8
         clipsToBounds = true
         
-        nomeLabel.text = "Ana Laura"
         nomeLabel.adicionarShadow()
-        
-        idadeLabel.text = "20"
         idadeLabel.adicionarShadow()
-        
-        fraseLabel.text = "O último a dar match chama"
         fraseLabel.adicionarShadow()
         
         addSubview(fotoImageView)
+        addSubview(deslikeImageView)
         
+        deslikeImageView.preencher(
+            top: topAnchor,
+            leading: nil,
+            trailing: trailingAnchor,
+            bottom: nil,
+            padding: .init(top: 20, left: 0, bottom: 0, right: 20)
+        )
+        
+        addSubview(likeImageView)
+        
+        likeImageView.preencher(
+            top: topAnchor,
+            leading: leadingAnchor,
+            trailing: nil,
+            bottom: nil,
+            padding: .init(top: 20, left: 20, bottom: 0, right: 0)
+        )
         fotoImageView.preencherSuperView()
         
         let nomeIdadeStackView = UIStackView(arrangedSubviews: [nomeLabel, idadeLabel, UIView()])
@@ -69,7 +79,7 @@ class CombineCardView: UIView {
             bottom: bottomAnchor,
             padding: .init(top: 0, left: 16, bottom: 16, right: 16)
         )
-    
+        
     }
     
     required init?(coder: NSCoder) {
