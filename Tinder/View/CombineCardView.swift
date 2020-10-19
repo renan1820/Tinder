@@ -28,7 +28,7 @@ class CombineCardView: UIView {
     let fraseLabel: UILabel = .textLabel(18, textColor: .white, numberLines: 2)
     
     let likeImageView: UIImageView = .iconCard(named: "card-like")
-    let deslikeImageView: UIImageView = .iconCard(named: "card-deslike")
+    let dislikeImageView: UIImageView = .iconCard(named: "card-deslike")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,9 +43,9 @@ class CombineCardView: UIView {
         fraseLabel.adicionarShadow()
         
         addSubview(fotoImageView)
-        addSubview(deslikeImageView)
+        addSubview(dislikeImageView)
         
-        deslikeImageView.preencher(
+        dislikeImageView.preencher(
             top: topAnchor,
             leading: nil,
             trailing: trailingAnchor,
