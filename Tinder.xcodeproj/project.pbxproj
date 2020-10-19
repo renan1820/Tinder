@@ -17,6 +17,8 @@
 		8D10BD55253CC667003B9F96 /* CombineCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD54253CC667003B9F96 /* CombineCardView.swift */; };
 		8D10BD58253CC8D8003B9F96 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD57253CC8D8003B9F96 /* UIView.swift */; };
 		8D10BD5A253CCBF4003B9F96 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD59253CCBF4003B9F96 /* UILabel.swift */; };
+		8D10BD5D253D3E57003B9F96 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD5C253D3E57003B9F96 /* Usuario.swift */; };
+		8D10BD60253D3F37003B9F96 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BD5F253D3F37003B9F96 /* UsuarioService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		8D10BD54253CC667003B9F96 /* CombineCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCardView.swift; sourceTree = "<group>"; };
 		8D10BD57253CC8D8003B9F96 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8D10BD59253CCBF4003B9F96 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		8D10BD5C253D3E57003B9F96 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		8D10BD5F253D3F37003B9F96 /* UsuarioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 		8D10BD3B253BFDEA003B9F96 /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				8D10BD5E253D3F26003B9F96 /* Service */,
+				8D10BD5B253D3E48003B9F96 /* Model */,
 				8D10BD56253CC883003B9F96 /* Lib */,
 				8D10BD53253CC642003B9F96 /* View */,
 				8D10BD50253BFF15003B9F96 /* Controller */,
@@ -101,6 +107,22 @@
 				8D10BD59253CCBF4003B9F96 /* UILabel.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		8D10BD5B253D3E48003B9F96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D10BD5C253D3E57003B9F96 /* Usuario.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D10BD5E253D3F26003B9F96 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8D10BD5F253D3F37003B9F96 /* UsuarioService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D10BD60253D3F37003B9F96 /* UsuarioService.swift in Sources */,
+				8D10BD5D253D3E57003B9F96 /* Usuario.swift in Sources */,
 				8D10BD52253BFF35003B9F96 /* CombineVC.swift in Sources */,
 				8D10BD41253BFDEA003B9F96 /* ViewController.swift in Sources */,
 				8D10BD5A253CCBF4003B9F96 /* UILabel.swift in Sources */,

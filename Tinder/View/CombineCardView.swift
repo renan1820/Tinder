@@ -9,6 +9,18 @@
 import UIKit
 
 class CombineCardView: UIView {
+    
+    var usuario: Usuario? {
+        didSet{
+            if let usuario = usuario {
+                fotoImageView.image = UIImage(named: usuario.foto)
+                nomeLabel.text = usuario.name
+                fraseLabel.text = usuario.frase
+                idadeLabel.text = String(usuario.idade)
+                
+            }
+        }
+    }
     let fotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "pessoa-1")
@@ -50,7 +62,6 @@ class CombineCardView: UIView {
         stackView.distribution = .fillEqually
         addSubview(stackView)
         
-        addSubview(stackView)
         stackView.preencher(
             top: nil,
             leading: leadingAnchor,
