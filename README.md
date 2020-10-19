@@ -29,4 +29,4 @@ CombineCardView, Like and notLike, viewLike, viewNotLike, UINavigationController
 5. Run the app. Click 'Run'.
 
 ### Screen shots ###
-![Clone](Tinder/Tinder/Assets.xcassets/tinderBanner.imageset/tinderBanner.jpg)
+![Clone](Tinder/Assets.xcassets/tinderBanner.imageset/tinderBanner.jpg)
