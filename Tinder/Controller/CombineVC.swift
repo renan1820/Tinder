@@ -104,7 +104,7 @@ extension CombineVC{
     
     func verificarMatch(usuario: Usuario){
         if usuario.match{
-            print("Wooo")
+            print("This is a Match!")
         }
     }
 }
