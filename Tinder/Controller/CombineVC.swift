@@ -8,6 +8,9 @@
 
 import UIKit
 
+enum Acao{
+    case DISLIKE, LIKE, SUPERLIKE
+}
 class CombineVC: UIViewController {
     
     var perfilButton: UIButton = .iconMenu(named: "icone-perfil")
@@ -63,12 +66,15 @@ extension CombineVC{
             bottom: view.bottomAnchor,
             padding: .init(top: 0, left: 16, bottom: 34, right: 16)
         )
+        
+        dislikeButton.addTarget(self, action: #selector(dislikeClick), for: .touchUpInside)
+        superlikeButton.addTarget(self, action: #selector(superlikeClick), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeClick), for: .touchUpInside)
     }
 }
 
 extension CombineVC{
     func adcionarCards(){
-        
         for usuario in usuarios {
 
             let card = CombineCardView()
@@ -85,6 +91,20 @@ extension CombineVC{
             card.addGestureRecognizer(gesture)
             
             view.insertSubview(card, at: 0)
+        }
+    }
+    
+    func removerCard(card: UIView){
+        card.removeFromSuperview()
+        
+        self.usuarios = self.usuarios.filter({ (usuario) -> Bool in
+            return usuario.id != card.tag
+        })
+    }
+    
+    func verificarMatch(usuario: Usuario){
+        if usuario.match{
+            print("Wooo")
         }
     }
 }
@@ -108,6 +128,17 @@ extension CombineVC{
             card.transform = CGAffineTransform(rotationAngle: rotationAngle)
             
             if gesture.state == .ended{
+                
+                if card.center.x > self.view.bounds.width + 50{
+                    self.animarCard(rotateAngle: rotationAngle, acao: .LIKE)
+                    return
+                }
+                
+                if card.center.x < -50{
+                    self.animarCard(rotateAngle: rotationAngle, acao: .DISLIKE)
+                    return
+                }
+                
                 UIView.animate(withDuration: 0.2) {
                     card.center = self.view.center
                     card.transform = .identity
@@ -117,6 +148,56 @@ extension CombineVC{
                 }
             }
         }
-        
+    }
+    
+    @objc func superlikeClick(){
+        self.animarCard(rotateAngle: 0, acao: .SUPERLIKE)
+    }
+    
+    @objc func dislikeClick(){
+        self.animarCard(rotateAngle: -0.4, acao: .DISLIKE)
+    }
+    
+    @objc func likeClick(){
+        self.animarCard(rotateAngle: +0.4, acao: .LIKE)
+    }
+    func animarCard(rotateAngle: CGFloat, acao: Acao){
+        if let usuario = self.usuarios.first{
+            for view in self.view.subviews{
+                if  view.tag == usuario.id {
+                    if let card = view as? CombineCardView{
+                        let center: CGPoint
+                        var like: Bool
+                        
+                        switch acao {
+                        case .DISLIKE:
+                            center = CGPoint(x:  card.center.x - self.view.bounds.width, y: card.center.y + 50)
+                            like = false
+                        case .LIKE:
+                            center = CGPoint(x:  card.center.x + self.view.bounds.width, y: card.center.y + 50)
+                            like = true
+                        
+                        case .SUPERLIKE:
+                            center = CGPoint(x: card.center.x, y: card.center.y - self.view.bounds.height)
+                            like = true
+                        }
+                        
+                        UIView.animate(withDuration: 0.2, animations: {
+                            card.center = center
+                            card.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                            
+                            card.dislikeImageView.alpha = like == false ? 1 : 0
+                            card.likeImageView.alpha = like == true ? 1 : 0
+
+                        }, completion: { (_) in
+                            if like{
+                                self.verificarMatch(usuario: usuario)
+                            }
+                            self.removerCard(card: card)
+                        })
+                    }
+                }
+            }
+        }
     }
 }
